@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+
+    [SerializeField] private Rigidbody2D rbody;
+    [SerializeField] private float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +14,10 @@ public class InputManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        Vector2 dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        dir.Normalize();
+        rbody.velocity = dir * speed;
     }
 }
