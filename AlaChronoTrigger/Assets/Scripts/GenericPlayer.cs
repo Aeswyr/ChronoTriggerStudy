@@ -38,7 +38,7 @@ public class GenericPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(playerStats.health)
+        Debug.Log(playerStats.health);
     }
 
     // Update is called once per frame
